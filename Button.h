@@ -1,11 +1,11 @@
-#ifndef ArduinoButton_h
-#define ArduinoButton_h
+#ifndef Button_h
+#define Button_h
 
 #include "Arduino.h"
 
-class ArduinoButton {
+class Button {
   public:
-    ArduinoButton(int pin);
+    Button(int pin);
     bool read();
     static int debounceDelay;
 

@@ -1,6 +1,8 @@
+// Library testing file
+
 #include "ConvenienceLib.h"
 
-ArduinoButton butt(A0);
+Button butt(A0);
 
 void setup() {
   Serial.begin(9600);

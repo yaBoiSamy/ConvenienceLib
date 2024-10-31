@@ -1,13 +1,13 @@
-#include "ArduinoButton.h"
+#include "Button.h"
 #include "Arduino.h"
 
-ArduinoButton::ArduinoButton(int _pin){
+Button::Button(int _pin){
   pin = _pin;
   state = 0;
   pinMode(pin, OUTPUT);
 }
 
-bool ArduinoButton::read(){
+bool Button::read(){
   isBouncing = isBouncing && !(millis() - lastStateChange > debounceDelay); // Update isBouncing in case it's timer ran out
 
   if (!isBouncing){
@@ -20,4 +20,4 @@ bool ArduinoButton::read(){
   return state;
 }
 
-int ArduinoButton::debounceDelay = 40;
+int Button::debounceDelay = 40;
