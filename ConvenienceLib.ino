@@ -11,11 +11,14 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("sussy");
+  Serial.println("==========================");
   Serial.println(u.str());
-  Serial.println(u[0]);
-  Serial.println(u[1]);
-  Serial.println(u[2]);
+  u[0] = 1;
+  u[1] = 2;
+  u[2] = 3;
+  Serial.println(u.x);
+  Serial.println(u.y);
+  Serial.println(u.z);
   Serial.println(u.norm());
   Serial.println(u.angle(v));
   Serial.println(u.normalize().str());
@@ -24,6 +27,8 @@ void loop() {
   Serial.println(cross.str());
   Serial.println(cross.dot(u));
   Serial.println(cross.dot(v));
-
+  (u+v).print();
+  u += v;
+  u.print();
   delay(1000);
 }

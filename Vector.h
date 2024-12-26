@@ -5,18 +5,11 @@
 
 class Vect {
   public:
+    // Components
+    float x; float y; float z;
+
     // Constructor
-    Vect(float x, float y, float z);
-
-    // Getter methods
-    float x() const;
-    float y() const;
-    float z() const;
-
-    // Setter methods
-    void setx(float num);
-    void sety(float num);
-    void setz(float num);
+    Vect(float _x = 0, float _y = 0, float _z = 0) : x(_x), y(_y), z(_z) {};
 
     // Other methods
     float dot(const Vect& other) const;
@@ -29,9 +22,11 @@ class Vect {
     // Operator overloads
     float& operator[](int index);
     const float& operator[](int index) const;
-
-  private:
-    float arr[3];  // Store x, y, z coordinates
+    Vect operator+(const Vect& other) const;
+    Vect operator-(const Vect& other) const;
+    Vect& operator+=(const Vect& other);
+    Vect& operator-=(const Vect& other);
+    void print() const;
 };
 
 #endif
