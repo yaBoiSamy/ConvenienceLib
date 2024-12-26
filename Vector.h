@@ -9,7 +9,7 @@ class Vect {
     float x; float y; float z;
 
     // Constructor
-    Vect(float _x = 0, float _y = 0, float _z = 0) : x(_x), y(_y), z(_z) {};
+    Vect(float _x = 0, float _y = 0, float _z = 0);
 
     // Other methods
     float dot(const Vect& other) const;
@@ -24,8 +24,10 @@ class Vect {
     const float& operator[](int index) const;
     Vect operator+(const Vect& other) const;
     Vect operator-(const Vect& other) const;
+    Vect operator*(float other) const;
     Vect& operator+=(const Vect& other);
     Vect& operator-=(const Vect& other);
+    Vect& operator*=(float other);
     void print() const;
 };
 

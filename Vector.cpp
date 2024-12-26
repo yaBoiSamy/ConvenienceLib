@@ -1,6 +1,9 @@
 #include "Vector.h"
 #include "Arduino.h"
 
+// Constructor
+Vect::Vect(float _x, float _y, float _z) : x(_x), y(_y), z(_z) {}
+
 // Dot product
 float Vect::dot(const Vect& other) const {
   return x * other.x + y * other.y + z * other.z;
@@ -70,6 +73,11 @@ Vect Vect::operator-(const Vect& other) const {
   return Vect(x - other.x, y - other.y, z - other.z);
 }
 
+// Overload * operator
+Vect Vect::operator*(float other) const {
+  return Vect(x * other, y * other, z * other);
+}
+
 // Overload += operator
 Vect& Vect::operator+=(const Vect& other) {
   x += other.x;
@@ -83,6 +91,14 @@ Vect& Vect::operator-=(const Vect& other) {
   x -= other.x;
   y -= other.y;
   z -= other.z;
+  return *this;
+}
+
+// Overload *= operator
+Vect& Vect::operator*=(float other) {
+  x *= other;
+  y *= other;
+  z *= other;
   return *this;
 }
 
