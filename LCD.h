@@ -1,5 +1,5 @@
-#ifndef Button_h
-#define Button_h
+#ifndef LCD_h
+#define LCD_h
 #include "Arduino.h"
 #include <Wire.h>
 #include <Adafruit_GFX.h>
