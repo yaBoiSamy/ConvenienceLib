@@ -13,9 +13,9 @@ void setup() {
 void loop() {
   Serial.println("sussy");
   Serial.println(u.str());
-  Serial.println(u.x());
-  Serial.println(u.y());
-  Serial.println(u.z());
+  Serial.println(u[0]);
+  Serial.println(u[1]);
+  Serial.println(u[2]);
   Serial.println(u.norm());
   Serial.println(u.angle(v));
   Serial.println(u.normalize().str());

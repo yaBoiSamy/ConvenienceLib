@@ -55,3 +55,15 @@ Vect Vect::normalize() const {
 String Vect::str() const {
   return "( " + String(x()) + " , " + String(y()) + " , " + String(z()) + " )";
 }
+
+// Overloading the [] operator for reading and writing
+float& Vect::operator[](int index) {
+  return arr[index];
+}
+
+// Overloading the [] operator for const objects (read-only)
+const float& Vect::operator[](int index) const {
+  return arr[index];
+}
+
+

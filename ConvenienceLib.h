@@ -3,5 +3,6 @@
 
 #include "Button.h"
 #include "Vector.h"
+#include "LCD.h"
 
 #endif

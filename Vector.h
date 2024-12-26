@@ -26,6 +26,10 @@ class Vect {
     Vect normalize() const;
     String str() const;
 
+    // Operator overloads
+    float& operator[](int index);
+    const float& operator[](int index) const;
+
   private:
     float arr[3];  // Store x, y, z coordinates
 };
