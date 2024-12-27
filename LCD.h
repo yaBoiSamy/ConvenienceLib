@@ -7,7 +7,7 @@
 
 class LCD {
   public:
-    LCD(String labels[], float* values[], int labelcount); 
+    LCD(String labels[], double* values[], int labelcount); 
     void begin();
     void update();
     void next();
@@ -20,7 +20,7 @@ class LCD {
     Adafruit_SSD1306 display;
     void overflowPrint(String input, int maxlen);
     String labels[6];
-    float* valueRefs[6];
+    double* valueRefs[6];
     int labelcount;
     int carrouselIndex;
 };

@@ -5,7 +5,7 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-LCD::LCD(String _labels[], float* _values[], int _labelcount): display(128, 64, &Wire, -1){
+LCD::LCD(String _labels[], double* _values[], int _labelcount): display(128, 64, &Wire, -1){
   labelcount = _labelcount;
   carrouselIndex = _labelcount;
   
