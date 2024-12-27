@@ -2,10 +2,10 @@
 #include "Arduino.h"
 
 // Constructor
-Vect::Vect(float _x, float _y, float _z) : x(_x), y(_y), z(_z) {}
+Vect::Vect(double _x, double _y, double _z) : x(_x), y(_y), z(_z) {}
 
 // Dot product
-float Vect::dot(const Vect& other) const {
+double Vect::dot(const Vect& other) const {
   return x * other.x + y * other.y + z * other.z;
 }
 
@@ -19,18 +19,18 @@ Vect Vect::cross(const Vect& other) const {
 }
 
 // Norm (magnitude) of the vector
-float Vect::norm() const {
+double Vect::norm() const {
   return sqrt(x*x + y*y + z*z);
 }
 
 // Angle between two vectors
-float Vect::angle(const Vect& other) const {
+double Vect::angle(const Vect& other) const {
   return acos(dot(other)/(norm()*other.norm()));
 }
 
 // Normalize the vector (unit vector)
 Vect Vect::normalize() const {
-  float n = norm();
+  double n = norm();
   return n==0 ? Vect(0, 0, 0) : Vect(x/n, y/n, z/n);
 }
 
@@ -40,7 +40,7 @@ String Vect::str() const {
 }
 
 // Overloading the [] operator for reading and writing
-float& Vect::operator[](int index) {
+double& Vect::operator[](int index) {
   switch(index){
     case 0:
       return x;
@@ -52,7 +52,7 @@ float& Vect::operator[](int index) {
 }
 
 // Overloading the [] operator for const objects (read-only)
-const float& Vect::operator[](int index) const {
+const double& Vect::operator[](int index) const {
   switch(index){
     case 0:
       return x;
@@ -74,7 +74,7 @@ Vect Vect::operator-(const Vect& other) const {
 }
 
 // Overload * operator
-Vect Vect::operator*(float other) const {
+Vect Vect::operator*(double other) const {
   return Vect(x * other, y * other, z * other);
 }
 
@@ -95,7 +95,7 @@ Vect& Vect::operator-=(const Vect& other) {
 }
 
 // Overload *= operator
-Vect& Vect::operator*=(float other) {
+Vect& Vect::operator*=(double other) {
   x *= other;
   y *= other;
   z *= other;
